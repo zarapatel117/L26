@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Class Inheritance with Static Method</title>
+</head>
+<body>
+    <h2>JS Class Inheritance with Static Method</h2>
+    <p id="details"></p>
+
+    <script>
+        class School {
+            constructor(name) {
+                this.schoolName = name;
+            }
+            info() {
+                return "School Name: " + this.schoolName;
+            }
+            static welcome() {
+                return "Welcome to our Education System!";
+            }
+        }
+
+        class Student extends School {
+            constructor(name, studentName) {
+                super(name);
+                this.studentName = studentName;
+            }
+            details() {
+                return this.info() + "<br>Student Name: " + this.studentName;
+            }
+        }
+
+        let output = School.welcome() + "<br>";
+
+        let student1 = new Student("blah blah School", "zara");
+
+        output += student1.details();
+
+        document.getElementById("details").innerHTML = output;
+    </script>
+</body>
+</html>
